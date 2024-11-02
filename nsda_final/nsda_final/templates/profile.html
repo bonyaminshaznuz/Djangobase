@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+
+{% block content %}
+{% load static %}
+{% include 'header.html' %}
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="card p-4" style="width: 100%; max-width: 400px;">
+            <div class="text-center">
+                <!-- Profile Picture -->
+                <img src="{{user.profile_image.url}}" class="rounded-circle mb-3" alt="Profile Picture" width="150" height="150">
+                <!-- Name -->
+                <h4 class="card-title">{{user.username}}</h4>
+                <!-- Email Address -->
+                <p class="card-text text-muted">johndoe@example.com</p>
+                <!-- Additional Info -->
+                <p class="card-text">Software Developer at Example Corp</p>
+                <!-- Button to edit profile -->
+                <a href="#" class="btn btn-primary">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
